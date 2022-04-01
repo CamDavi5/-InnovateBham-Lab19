@@ -1,11 +1,17 @@
 import React from 'react'
 
-const ChirpCard = ({username, message, created}) => {
+const ChirpCard = ({id, username, userid, content, posttime, handleDeleteChirp, handlePutChirp}) => {
     return (
         <>
             <h3>{username}</h3>
-            <p>{message}</p>
-            <small>{created}</small>
+            <p>{content}</p>
+            <small>{posttime}</small>
+            <button onClick={() => handleDeleteChirp(id)}>
+                Delete
+            </button>
+            <button onClick={() => handlePutChirp(id, userid, location)}>
+                Edit
+            </button>
         </>
     )
 }
